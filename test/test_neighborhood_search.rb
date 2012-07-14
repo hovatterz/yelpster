@@ -18,9 +18,10 @@ class TestNeighborhoodSearch < Test::Unit::TestCase
     "country_code" => "US",
     "country" => "USA",
     "borough" => "",
-    "url" => "http://www.yelp.com/search?find_loc=Outer+Richmond%2C+San+Francisco%2C+CA%2C+USA", 
+    "url" => "http://www.yelp.com/search?find_desc=&find_loc=Outer+Richmond%2C+San+Francisco%2C+CA%2C+USA",
     "state" => "CA",
-    "state_code" => "CA" }
+    "state_code" => "CA"
+  }
 
   def test_geo_point_search
     request = Yelp::V1::Neighborhood::Request::GeoPoint.new(:latitude => GORDO_LAT,
