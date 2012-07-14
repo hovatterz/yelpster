@@ -12,20 +12,20 @@ module YelpHelper
     when API_V1
       assert_not_nil(ENV['YWSID'], "Missing YWSID.  Obtain from http://www.yelp.com/developer and " +
                      "set in your shell environment under 'YWSID'.")
-      @yws_id = ENV['YWSID']
+      Yelp.ywsid = ENV['YWSID']
     when API_V2
       assert_not_nil(ENV['CONSUMER_KEY'], "Missing CONSUMER_KEY.  Obtain from http://www.yelp.com/developer and " +
                      "set in your shell environment under 'CONSUMER_KEY'.")
-      @consumer_key = ENV['CONSUMER_KEY']
+      Yelp.consumer_key = ENV['CONSUMER_KEY']
       assert_not_nil(ENV['CONSUMER_SECRET'], "Missing CONSUMER_SECRET.  Obtain from http://www.yelp.com/developer and " +
                      "set in your shell environment under 'CONSUMER_SECRET'.")
-      @consumer_secret = ENV['CONSUMER_SECRET']
+      Yelp.consumer_secret = ENV['CONSUMER_SECRET']
       assert_not_nil(ENV['TOKEN'], "Missing TOKEN.  Obtain from http://www.yelp.com/developer and " +
                      "set in your shell environment under 'TOKEN'.")
-      @token = ENV['TOKEN']
+      Yelp.token = ENV['TOKEN']
       assert_not_nil(ENV['TOKEN_SECRET'], "Missing TOKEN_SECRET.  Obtain from http://www.yelp.com/developer and " +
                      "set in your shell environment under 'TOKEN_SECRET'.")
-      @token_secret = ENV['TOKEN_SECRET']
+      Yelp.token_secret = ENV['TOKEN_SECRET']
     else
       assert_false("No api version specified in test case; cannot continue")
     end

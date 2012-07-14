@@ -47,8 +47,8 @@ class Yelp
 		end
 		
 		def pull_results (url, http_params)
-		  consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://api.yelp.com"})
-		  access_token = OAuth::AccessToken.new(consumer, token, token_secret)
+		  consumer = OAuth::Consumer.new(Yelp.consumer_key, Yelp.consumer_secret, {:site => "http://api.yelp.com"})
+		  access_token = OAuth::AccessToken.new(consumer, Yelp.token, Yelp.token_secret)
 		  access_token.get(url).body
 		end
 	  end

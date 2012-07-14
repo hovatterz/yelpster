@@ -30,9 +30,7 @@ class Yelp
 		end
 
 		def to_yelp_params
-		  params = {
-			:ywsid => yws_id
-		  }
+		  params = { :ywsid => Yelp.ywsid }
 
 		  # if they specified anything other than a json variant, we
 		  # need to tell yelp what we're looking for
