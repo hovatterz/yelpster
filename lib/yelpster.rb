@@ -1,3 +1,4 @@
+require 'yelpster/version'
 require 'yelpster/client'
 require 'yelpster/record'
 require 'yelpster/response_format'
@@ -20,8 +21,6 @@ require 'yelpster/v2/search/request/bounding_box'
 require 'yelpster/v2/search/request/location'
 
 module Yelp
-  VERSION = '1.1.1'
-
   class << self
     attr_accessor :ywsid
     attr_accessor :consumer_key, :consumer_secret, :token, :token_secret

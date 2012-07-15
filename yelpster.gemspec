@@ -1,4 +1,5 @@
-require File.expand_path("../lib/yelpster", __FILE__)
+$:.push File.expand_path("../lib", __FILE__)
+require "yelpster/version"
 
 Gem::Specification.new do |s|
   s.name        = "yelpster"
@@ -14,9 +15,12 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project         = "yelpster"
 
-  s.files        = Dir["{lib}/**/*.rb", "bin/*", "LICENSE", "*.md"]
-  s.require_path = 'lib'
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
 
   s.add_runtime_dependency "json", "~> 1.7.3"
   s.add_runtime_dependency "echoe", "~> 4.6.3"
+  s.add_runtime_dependency "oauth", "~> 0.4.6"
 end
