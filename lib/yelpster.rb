@@ -19,7 +19,7 @@ require 'yelpster/v2/search/request/geo_point'
 require 'yelpster/v2/search/request/bounding_box'
 require 'yelpster/v2/search/request/location'
 
-class Yelp
+module Yelp
   VERSION = '1.1.1'
 
   class << self
